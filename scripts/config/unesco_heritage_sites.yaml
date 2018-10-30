@@ -1,0 +1,6 @@
+mysql:
+  host: localhost
+  user: liyuan
+  passwd: gr/et50aumich
+  db: unesco_heritage_sites
+  local_infile: True
