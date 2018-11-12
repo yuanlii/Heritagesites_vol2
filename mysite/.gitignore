@@ -84,9 +84,12 @@ target/
 # Environments
 venv/
 venv.bak/
+*/venv/*
 
 # mkdocs documentation
 /site
 
 # mypy
 .mypy_cache/
+
+.DS_Store
