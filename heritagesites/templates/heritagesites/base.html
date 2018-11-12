@@ -22,31 +22,39 @@
   <body>
   
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
-    <nav class="navbar navbar-expand-sm navbar-dark navbar-custom p-0">
+    <nav class="navbar navbar-expand-sm navbar-dark navbar-custom sticky-top px-4 py-2">
+    <!-- <nav class="navbar navbar-expand-sm navbar-dark navbar-custom p-0"></nav> -->
 
-      <a class="navbar-brand" href="{% url 'home' %}">SI664 Heritage Sites</a>
+      <div class="row">
+          <a class="navbar-brand" href="{% url 'home' %}">SI664 Heritage Sites</a>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'sites' %}">sites</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'countries' %}">countries/areas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">login</a>
+            </li>
+          </ul>
+        </div>
 
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'sites' %}">Sites</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
-        </li>
-
-      </ul>
     </nav>
 
 
-    <main>
+    <main class="px-4 py-3">
       <div class="container-fluid">
       {% block content %} 
 
       {% endblock content %}
       </div>
     </main>
-s
-    <footer>
+
+    <footer class="px-4 py-2">
       <p>Copyright &copy; 2018 <a href="mailto:yuanlii@umich.edu">Yuan Li</a></p>
     </footer>
 
