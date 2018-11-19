@@ -9,6 +9,8 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse,reverse_lazy
 from heritagesites.forms import HeritageSiteForm
 from django.http import HttpResponseRedirect
+from .filters import HeritageSiteFilter
+from django_filters.views import FilterView
 
 def index(request):
 	return HttpResponse("Hello, world. You're at the UNESCO Heritage Sites index page.")
@@ -169,4 +171,12 @@ class CountryAreaDetailView(generic.DetailView):
 	def dispatch(self, *args, **kwargs):
 		return super().dispatch(*args, **kwargs)
 
-	
+# new view
+@method_decorator(login_required, name='dispatch')
+class SiteFilterView(FilterView):
+	filterset_class = HeritageSiteFilter
+	context_object_name = 'filters'
+	template_name = 'heritagesites/site_filter.html'
+
+	def dispatch(self, *args, **kwargs):
+		return super().dispatch(*args, **kwargs)

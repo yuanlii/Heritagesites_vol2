@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'social_django',  
     'crispy_forms', 
     'test_without_migrations',
+    'django_filters',
 ]
 
 TEST_RUNNER = 'heritagesites.utils.UnManagedModelTestRunner'
